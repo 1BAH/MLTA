@@ -384,6 +384,11 @@ for k in range(1, 7):
 
     if k != 6:
         CNF += ' \wedge '
+        
+for m in range(1, 7):
+    for n in range(1, 7):
+        if m % 2 - n % 2 == 0 and m != n:
+            CNF += r' \wedge (\neg e_{%d, %d})' % (min(m, n), max(m, n))
 
 WriteCNF('------------------------------')
 WriteCNF('            CNF')
